@@ -135,7 +135,10 @@ int main(void) {
       pwm_all_off();
       lin_all_on(); /* 3 low-side ON = kısa devre frenleme */
       break;
-
+    
+    case CMD_SHIFT:
+      bldc_set_shift((int8_t)r.value);
+      
     case CMD_NONE:
     default:
       break;
